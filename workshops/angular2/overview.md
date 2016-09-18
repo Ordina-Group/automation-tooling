@@ -12,18 +12,29 @@ A story to tell in 2 sessions.
         * Pro and Cons
         * Brocolli vs ...
         * Generators
-        * Wiring for reload, unit & E2E testing //Auto generated wiring for testing with small example with TTD (unit)
-        * Exercise: Create angular 2 project (guided & commentary) (add extra  npm packages e.g. angular material, sass loading)   //@Ryan:  from scratch  not from our project
+        * Wiring for reload, unit & E2E testing
+        * Exercise: Create angular 2 project
 
-    * Part 2:
-        * Intro in Angular 2 (Why Angular2, current state, core concepts)
-        * Components (maybe vs directives)  (pipes here as well ?)
-            * Theory
-        * NgModules (maybe vs directives)
-            * Theory
+        * Part 2:
+            * Intro to Angular2
+                * Why Angular2?
+                * Current state
+                * Core concepts(Dependency Injection, Data binding, Components)
+                * Decorators and metadata
+            * Components, directives and pipes
+                * Components vs directives
+                * Component architecture, unidirectional data flow vs n-way data binding
+                * Pipes
+            * NgModules
+                * What are NgModules
+                * @NgModule metadata properties
+                * AoT vs JIT Compiling
+
         * Exercise: Implement ngModule and a Component (Checkout or generate / Write basic unit test / Implement ngModule and a Component  and run)
         * Services (& observables)
-            * Theory (Unit Testing http calls with mockbackend   and observables ?)
+            * Quick intro to Reactive Programming and Observables
+            * Providers and dependencies
+                        * Unit Testing http calls with mockbackend  and observables
             * Exercise: Implement service (Checkout or generate / Write basic unit test / Implement service and run)
 
 2. Session 2 (10 October 2016)
@@ -31,11 +42,10 @@ A story to tell in 2 sessions.
         * Router
             * Theory
             * Exercise  Implement a router (Checkout or generate / Write basic unit test / Implement the router and run)
-        * Reactive forms vs template driven forms
-            * Theory (2 way binding...)
+        * Forms
+            * Reactive forms vs template driven forms
+            * Form Validation
             * Exercise: Implement a basic form. (Checkout or generate / Write basic unit test / Implement the router and run)
-
-        * SOMETHING ELSE ??? // tot hier hebben we dan alles wat je wilt vertellen over de theory   en steeds ook unit testing het nieuwe 'element' in code)
 
     * Part 2:
         * Angular 2 E2E testing with protractor
