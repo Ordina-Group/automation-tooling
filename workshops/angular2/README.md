@@ -3,4 +3,4 @@
 ### Prereqs:
 * Typings (global)
 * Angular-cli (global)
-* Protractor webdriver updated
+* Protractor webdriver updated // run ng pree2e
