@@ -4,15 +4,36 @@
 
 ## History
 
+Foremost was the incredibly slow app refresh during development due to SystemJS loading every file dynamically —definitely a deal breaker.
+All the gains made with scaffolding efficiency were quickly offset by the painfully slow app refreshes and the 5 step process to add 3rd party npm modules. So I backburnered it in favor of Angular 2 Webpack seeds.
+
+
+
 ## Old technologies ...
 
+* Amber-cli with SystemJS
+
+** Dynamically loading every file
+
+** No css reload
+
 ## ... to new technologies
+
+## Pros now
+
+* Better reload -> building sass/scss/less -> css -> reload
+
+* Tree Shaking
+The last major feature the Webpack angular-cli brings is Tree-Shaking. This is a process that scours your entire project and prevents any unreferenced code from being included in the bundle. This significantly reduces the bundle size. In the case of our demo app, the bundle size is cut by nearly 1/3!!
+
+* Generators
 
 ## Generators
 theory
 
 
-
+## Future:
+Webpack has another feature that supercharges iteration speeds; Hot Module Reload (aka HMR). HMR hot-reloads only the parts of the application that have changed without refreshing the browser. Although HMR is not available in this version of angular-cli, there is talk of adding HMR to a future release. In the meantime, Patrick at AngularClass has created a library that integrates HMR with Angular 2 if curiosity strikes you.
 
 
 ## How to:
