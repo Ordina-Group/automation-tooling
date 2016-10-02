@@ -228,3 +228,5 @@ ngOnInit() {
 }
 ...
 ```
+
+![Alt text](img/exercise3_total.png "Final state for the first session.")
