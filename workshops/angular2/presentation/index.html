@@ -52,11 +52,31 @@
     <div class="slides">
         <section>
             <img src="img/angular.svg" style="vertical-align: bottom;" width="40%"/>
-
             <h2>Angular2 the story </br> part 1</h2>
             <img src="img/jworks-logo.png" width="11.1%"/>
-
             <br/>
+        </section>
+
+        <section>
+            <h2>Setting up</h2>
+            <ul>
+                <li>
+                    <strong>Angular-cli</strong>
+                    <ul>
+                        <li>npm install angular-cli -g   (latest)</li>
+                        <li>ng new yourProjectName</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Angular2</strong>
+                    <ul>
+                        <li>git clone https://github.com/VeeTeeDev/jworks-cc-app-fe</li>
+                        <li>npm install</li>
+                        <li>git tag //to see the available entry point</li>
+                        <li>Open our Jworks github page (automation-tooling/workshops/angular2/exercises)
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section>
@@ -83,18 +103,30 @@
                 </div>
             </div>
         </section>
-
+        <section>
+            <div class="row">
+                <div class="col-xs-6">
+                    <h2>And a big applause to our contributors!</h2>
+                    <ul>
+                        <li>Jan De Wilde for some styling</li>
+                        <li>Dimitri De Kerf (for documentation, testing, ...)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
         <!-- PUT CONTECT HERE -->
         <section id="overview">
             <h2>Topics</h2>
             <ul>
-                <li>Introduction</li>
                 <li>
                     <strong>Angular-cli</strong>
                     <ul>
-                        <li>Generators</li>
+                        <li>Introduction</li>
                         <li>Scripts</li>
+                        <li>dev-env</li>
+                        <li>Generators</li>
+                        <li>Exercise</li>
                     </ul>
                 </li>
                 <li>
@@ -121,25 +153,40 @@
             </section>
             <section>
                 <h2>The story</h2>
-                <ul>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>...</li>
-                </ul>
+                <p>
+                    Almost 2 years ago, rumors about Angular 2 started spreading around the world.
+                    After waiting and waiting and waiting... here it is. Angular 2.0
+                </p>
             </section>
-        </section>
-        <section>
-            <section data-background="#DF6F0C">
-                <h2 style="color: #fff;">Angular-cli</h2>
+            <section data-transition="fade-in">
+                <img src="img/angular2.jpg" width="20%"/>
+            </section>
+            <section data-transition="fade-in">
+                <img src="img/angular2.jpg" width="25%"/>
+            </section>
+            <section data-transition="fade-in">
+                <img src="img/angular2.jpg" width="30%"/>
+            </section>
+            <section data-transition="fade-in">
+                <img src="img/angular2.jpg" width="35%"/>
+            </section>
+            <section data-transition="fade-in">
+                <img src="img/angular2.jpg" width="40%"/>
+            </section>
+            <section data-transition="fade-in">
+                <img src="img/angular2.jpg" width="45%"/>
+            </section>
+            <section data-transition="fade-in">
+                <img src="img/angular2.jpg" width="50%"/>
+            </section>
+            <section data-transition="fade-in">
+                <img src="img/angular2.jpg" width="60%"/>
+            </section>
+            <section data-transition="fade-in">
+                <img src="img/angular2.jpg" width="80%"/>
             </section>
             <section>
-                <h2>Test</h2>
-                <ul>
-                    <li>test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                </ul>
+                <h2>A fairytale ?</h2>
             </section>
         </section>
         <section>
@@ -212,6 +259,110 @@
                 </div>
             </section>
         </section>
+        <section>
+            <section>
+                <h2>Angular 2 RC4 to RC5</h2>
+                <p>A minor update that took me a weekend.</p>
+            </section>
+            <section>
+                    <h2>Angular 2: RC4 to RC5</h2>
+                    <a href="https://www.barbarianmeetscoding.com/blog/2016/08/13/updating-your-angular-2-app-from-rc4-to-rc5-a-practical-guide/">Migration guide</a>
+                    <ul>
+                        <li>Update your package.json to refer to the new version 2.0.0-rc.5 and install the updated packages with npm install</li>
+                        <li>Update the bootstrapping and wrap your app in an NgModule</li>
+                        <li>Move your directive and pipe declarations from @Component to @NgModule</li>
+                        <li>Optionally move your providers declarations from @Component to @NgModule</li>
+                        <li>Declare your module dependencies (FormsModule, HttpModule, etc)</li>
+                        <li>Update the router</li>
+                    </ul>
+            </section>
+            <section>
+                <h2>Angular-cli: from systemjs to webpack</h2>
+                <p>
+                    So happy with this update, that it made me cry when I realised that custom webpack config are not allowed (yet).
+                </p>
+            </section>
+            <section>
+                <h2>Angular-CLI: SystemJS to Webpack</h2>
+                <a href="https://github.com/angular/angular-cli/wiki/Upgrading-from-Beta.10-to-Beta.14">Migration guide</a>
+                <ul>
+                    <li>Update to latest CLI version</li>
+                    <li class="fragment">Generate new project</li>
+                    <li class="fragment">Rename src directory, move src from excisting project to new one</li>
+                    <li class="fragment">Delete system-config.ts and typings.d.ts files from src</li>
+                    <li class="fragment">Copy files from renamed src directory
+                        <ul>
+                            <li>Polyfill.ts</li>
+                            <li>styles.ts</li>
+                            <li>test.ts</li>
+                            <li>tsconfig.json</li>
+                            <li>typings.d.ts</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>SystemJS to Webpack</h2>
+                <ul>
+                    <li>Merge main.ts and index.html from new project with existing one</li>
+                    <li class="fragment">Copy environment files</li>
+                    <li class="fragment">Install npm dependencies which were used</li>
+                    <li class="fragment">Remove "module: module.id" from all files</li>
+                    <li class="fragment">Move assets to assets folder in src</li>
+                    <li class="fragment">When using SASS/LESS, rename styleUrls</li>
+                    <li class="fragment">Build with "ng build" command and remove the renamed src directory</li>
+                    <li class="fragment">Move .git folder to the new project</li>
+                    <li class="fragment">That's it! Use "ng serve" to start your migrated app</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section data-background="#DF6F0C">
+                <img src="assets/img/angular-cli-logo.png" width="50%"/>
+            </section>
+            <section>
+                <h2>What is angular-cli</h2>
+                <p>
+                    To explain this better, let me first tell you a little story about a weird man, called 'yeoman'.
+                </p>
+            </section>
+            <section>
+                <img src="assets/img/yeoman-logo.png" width="20%"/>
+                <p>
+                    THE WEB'S SCAFFOLDING TOOL FOR MODERN WEBAPPS
+                </p>
+                <ul>
+                    <li class="fragment">Kickstarting</li>
+                    <li class="fragment">Generating stuff</li>
+                    <li class="fragment">Scripting stuff</li>
+                    <li class="fragment">Big library of 'generators'</li>
+                    <li class="fragment">http://yeoman.io/</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Why is this so cool ?</h3>
+                <p>
+                    We, developers, are lazy.
+                </p>
+                <p class="fragment">
+                    We like to do cool things once, just once.
+                </p>
+                <p class="fragment">
+                    So we copy/paste
+                    ...
+                    a lot.
+                </p>
+            </section>
+            <section>
+                <h3>So, what is angular-cli</h3>
+                <p>
+                    Angular-CLI is a Command Line Interface tool that creates and scaffolds an Angular 2 application for you.
+                    The cli comes with a built-in development server, TypeScript 2 support, unit- and End-to-End testing, etc...
+                </p>
+            </section>
+        </section>
+
+
 
 
         <!-- ===================================== -->
