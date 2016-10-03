@@ -8,7 +8,7 @@ The goal of this exercise it to:
 * Create unit tests.
 
 
-![Alt text](img/exercise1_total.png "Exercise 1 layout and structure.")
+![Alt text](img/exercise2_total.png "Exercise 1 layout and structure.")
 
 ## Steps:
 

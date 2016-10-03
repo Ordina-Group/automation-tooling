@@ -95,7 +95,7 @@ md-toolbar md-toolbar-row {
 
 See source code for the tests.
 
-If you import it in our `NgModule`, you can use it in our main components html.
+If you import it in our `NgModule`, you can use it in our app.component.html.
 
 
 #### Our contact-card
@@ -294,7 +294,7 @@ Remove the md-list from the main `app.component.html` and put it in the newly cr
 ```html
 <md-list>
   <md-list-item *ngFor="let contact of contacts">
-    <contact-card [contact]=contact ></contact-card>
+    <contact-card [contact]="contact"></contact-card>
   </md-list-item>
 </md-list>
 ```

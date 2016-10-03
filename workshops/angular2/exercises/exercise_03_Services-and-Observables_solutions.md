@@ -78,7 +78,7 @@ git checkout step2-components-contacts-list
 ```
 
 ### step2:
-Import `HttpModule` and `Observable` in the main NgModule and expose the api_endpoint.
+Import `HttpModule` and `Observable` in the main NgModule and expose the api_endpoint in the providers section.
 
 ```javascript
 ...

@@ -50,7 +50,7 @@ for search results.
 As you can see, each input will trigger a search and stress the backend.
 We will create a more efficient way in the next step.
 
-### step3:
+### step4:
 Add a debounce and unique check before making the call.
 * Add a Subject
 * Add a prefilter for debounce and uniqueness of the search term.
