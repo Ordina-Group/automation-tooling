@@ -328,9 +328,10 @@
                 <p>ngClass</p>
                 <p>...</p>
             </section>
-            <section id="components">
-                <h2>Components</h2>
-                <img src="img/russian-dolls.jpg" alt="">
+        </section>
+        <section>
+            <section data-background="#DF6F0C" id="components">
+                <h2 style="color: #fff;">Components</h2>
             </section>
             <section>
                 <h2>What is a component?</h2>
@@ -410,6 +411,86 @@ class MyCmp {
                 <p>Dumb components (presentational)</p>
                 <p>Smart components (container)</p>
                 <img src="img/hxusLJ2.png" alt="">
+            </section>
+            <section id="test-comp">
+                <h2>Testing a component</h2>
+                <ul>
+                    <li>Isolated</li>
+                    <li>Shallow</li>
+                    <li>Integrated / deep</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Component testing: isolated</h2>
+                <ul>
+                    <li>Used for testing components without rendering them</li>
+                    <li>Test like any other Typescript class / Javascript object</li>
+                    <li>Easy to create mocks of dependencies with jasmine</li>
+                </ul>
+                <pre><code data-trim contenteditable>
+beforeEach(() => {
+    mockService = jasmine.createSpyObj('myService', ['getContact']);
+    component = new MyComponent(mockService);
+  });
+					</code></pre>
+                <pre><code data-trim contenteditable>
+   mockService.getContact.and.returnValue(Promise.resolve(mockResponse));
+					</code></pre>
+            </section>
+            <section>
+                <h2>Component testing: Shallow</h2>
+                <p>Render the template</p>
+                <p>Isolated by not rendering the component's children</p>
+                <p>Use the <strong>TestBed</strong> utility class</p>
+                <pre><code data-trim contenteditable>
+beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [AppComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    });
+    fixture = TestBed.createComponent(AppComponent);
+  });
+					</code></pre>
+            </section>
+            <section>
+                <h2>Component testing: Integrated</h2>
+                <p>Exercise the integration of components</p>
+                <pre><code data-trim contenteditable>
+beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: ['MdInputModule', 'MdCardModule']
+      declarations: [AppComponent],
+      providers: ['ContactsService']
+    });
+    fixture = TestBed.createComponent(AppComponent);
+  });
+					</code></pre>
+            </section>
+            <section>
+                <h2>Angular-cli</h2>
+                <ul>
+                    <li>ng generate component name-with-dashes</li>
+                    <li>...</li>
+                    <li>...</li>
+                    <li>...</li>
+                </ul>
+                <p>Running shizzle!</p>
+            </section>
+            <section>
+                <h2>Exercise</h2>
+                <p>checkout out the repostitory on right tag</p>
+                <ul>
+                    <li>Generate components</li>
+                    <li>Add tests</li>
+                    <li>Build components</li>
+                    <li>Add in html</li>
+                </ul>
+                <p>Running shizzle!</p>
+            </section>
+        </section>
+        <section>
+            <section data-background="#DF6F0C">
+                <h2 style="color: #fff;">Modules</h2>
             </section>
             <section id="angular2-modules">
                 <h2>Modules</h2>
@@ -548,9 +629,6 @@ platformBrowser().bootstrapModuleFactory(AppModuleNgFactory);
                 <p>Extend the global application</p>
                 <p>Need CommonModule</p>
             </section>
-            <section section data-background-image="img/practice.gif">
-                <h2>Time to practice</h2>
-            </section>
             <section>
                 <h2>Data binding</h2>
                 <p>Component
@@ -664,8 +742,13 @@ platformBrowser().bootstrapModuleFactory(AppModuleNgFactory);
                 </ul>
 
             </section>
-            <section section data-background-image="img/yCIyDc0.gif">
-                <h2>Time to practice</h2>
+            <!--<section section data-background-image="img/yCIyDc0.gif">-->
+            <!--<h2>Time to practice</h2>-->
+            <!--</section>-->
+        </section>
+        <section>
+            <section data-background="#DF6F0C">
+                <h2 style="color: #fff;">Obervables and services</h2>
             </section>
             <section id="dep">
                 <h2>Dependency Injection</h2>
@@ -716,6 +799,15 @@ class MyService{
                 <p>Easy to mock and test</p>
             </section>
             <section>
+                <h2>Program to an interface</h2>
+                <p>Interfaces are a compile time artifact</p>
+                <p>They dissapear once the application gets compiled</p>
+                <p>Injector cannot map an interface token</p>
+                <br/>
+                <h4 style="color: red;">Class implements class</h4>
+                <h4 style="color: green;">OpaqueToken</h4>
+            </section>
+            <section>
                 <h2>How to use it?</h2>
                 <p>Register a provider in a component/ngmodule <strong>providers</strong> metadata property</p>
                 <p>A provider provides a concrete instance to the injector</p>
@@ -730,15 +822,6 @@ class MyCmp{
     }
 }
 					</code></pre>
-            </section>
-            <section>
-                <h2>Program to an interface</h2>
-                <p>Interfaces are a compile time artifact</p>
-                <p>They dissapear once the application gets compiled</p>
-                <p>Injector cannot map an interface token</p>
-                <br/>
-                <h4 style="color: red;">Class implements class</h4>
-                <h4 style="color: green;">OpaqueToken</h4>
             </section>
             <section id="observables">
                 <h2>Observables</h2>
@@ -780,102 +863,10 @@ export class MyCmp{
 <span>{{interval$ | async}}</span>
 					</code></pre>
             </section>
-        </section>
-        <section>
-            <section data-background="#DF6F0C">
-                <h2 style="color: #fff;">Components</h2>
-            </section>
-            <section>
-                <h2>Basics</h2>
-                <ul>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>...</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-            <section>
-                <h2>Angular-cli</h2>
-                <ul>
-                    <li>ng generate component name-with-dashes</li>
-                    <li>...</li>
-                    <li>...</li>
-                    <li>...</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-            <section>
-                <h2>Testing a component</h2>
-                <ul>
-                    <li>...</li>
-                    <li>...</li>
-                    <li>...</li>
-                    <li>...</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-            <section>
-                <h2>Example on slides...</h2>
-                <ul>
-                    <li>...</li>
-                    <li>...</li>
-                    <li>...</li>
-                    <li>...</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-            <section>
-                <h2>Exercise</h2>
-                <p>checkout out the repostitory on right tag</p>
-                <ul>
-                    <li>Generate components</li>
-                    <li>Add tests</li>
-                    <li>Build components</li>
-                    <li>Add in html</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-        </section>
-
-        <section>
-            <section data-background="#DF6F0C">
-                <h2 style="color: #fff;">Components</h2>
-            </section>
-            <section>
-                <h2>Basics</h2>
-                <ul>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>...</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
             <section>
                 <h2>Angular-cli</h2>
                 <ul>
                     <li>ng generate service name-with-dashes</li>
-                    <li>...</li>
-                    <li>...</li>
-                    <li>...</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-            <section>
-                <h2>Testing a service</h2>
-                <ul>
-                    <li>...</li>
-                    <li>...</li>
-                    <li>...</li>
-                    <li>...</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-            <section>
-                <h2>Example on slides...</h2>
-                <ul>
-                    <li>...</li>
                     <li>...</li>
                     <li>...</li>
                     <li>...</li>
