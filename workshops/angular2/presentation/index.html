@@ -269,11 +269,11 @@
                     <a href="https://www.barbarianmeetscoding.com/blog/2016/08/13/updating-your-angular-2-app-from-rc4-to-rc5-a-practical-guide/">Migration guide</a>
                     <ul>
                         <li>Update your package.json to refer to the new version 2.0.0-rc.5 and install the updated packages with npm install</li>
-                        <li>Update the bootstrapping and wrap your app in an NgModule</li>
-                        <li>Move your directive and pipe declarations from @Component to @NgModule</li>
-                        <li>Optionally move your providers declarations from @Component to @NgModule</li>
-                        <li>Declare your module dependencies (FormsModule, HttpModule, etc)</li>
-                        <li>Update the router</li>
+                        <li class="fragment">Update the bootstrapping and wrap your app in an NgModule</li>
+                        <li class="fragment">Move your directive and pipe declarations from @Component to @NgModule</li>
+                        <li class="fragment">Optionally move your providers declarations from @Component to @NgModule</li>
+                        <li class="fragment">Declare your module dependencies (FormsModule, HttpModule, etc)</li>
+                        <li class="fragment">Update the router</li>
                     </ul>
             </section>
             <section>
@@ -354,16 +354,136 @@
                 </p>
             </section>
             <section>
+                <h3>Alternative, standalone ?</h3>
+                <img src="assets/img/ember-cli.png" width="50%"/>
+                <ul>
+                    <li>https://ember-cli.com/</li>
+                    <li>Dev server and build system</li>
+                    <li>Generators</li>
+                    <li>And is using Broccolijs</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Broccolijs</h3>
+                <img src="assets/img/broccolijs.png" width="50%"/>
+                <p>
+                    Just try and open http://broccolijs.com/ (without cache)
+                </p>
+                <p>
+                    http://recordit.co/oQzg5hCuPZ
+                </p>
+            </section>
+            <section>
                 <h3>So, what is angular-cli</h3>
                 <p>
                     Angular-CLI is a Command Line Interface tool that creates and scaffolds an Angular 2 application for you.
                     The cli comes with a built-in development server, TypeScript 2 support, unit- and End-to-End testing, etc...
+                    And, it is based on ember-cli.
                 </p>
             </section>
+            <section>
+                <h3>Anguarl-CLI</h3>
+                <ul>
+                    <li>Based on ember-cli</li>
+                    <li>Build</li>
+                    <li>Dev server</li>
+                    <li>Generators</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Why was it so bad!</h3>
+                <p class="fragment">Based on ember-cli</p>
+                <p class="fragment">Based on broccoli</p>
+            </section>
+            <section>
+                <h3>Anguarl-CLI Pros</h3>
+                <ul>
+                    <li>Generators</li>
+                    <li>Webpack</li>
+                    <li>
+                        <ul>
+                            <li>Tree shaking (removing non-used moduls)</li>
+                            <li>Compile/reload of styling</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>Why do I like generators so much?</h3>
+                <ul>
+                    <li>Easy to use!</li>
+                    <li class="fragment">Scaffolding</li>
+                    <li class="fragment">Syntax (naming conventions)</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Anguarl-CLI Cons</h3>
+                <ul>
+                    <li>Sometimes buggy</li>
+                    <li>No custom webpack configs</li>
+                    <li>CSS reloading, no injection</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Angular-cli actions</h2>
+                <ul>
+                    <li>ng serve</li>
+                    <li>ng test --watch=false<li>
+                    <li>ng e2e</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Angular-cli fun with flags</h2>
+                <pre><code data-trim>
+"environments": {
+  "source": "environments/environment.ts",
+  "dev": "environments/environment.ts",
+  "prod": "environments/environment.prod.ts"
+}
+					</code></pre>
+            </section>
+            <section>
+                <h2>Angular-cli fun with flags</h2>
+                <p>
+                    <video id="bgvid">
+                      <source src="assets/video/flags.mp4" type="video/mp4">
+                    </video>
+                </p>
+            </section>
+            <section>
+                <h2>Angular-cli fun with flags</h2>
+                <ul>
+                    <li>ng build --base-href /myUrl/</li>
+                    <li>build --target=production or --target=development</li>
+                    <li>build --environment=production or --environment=development</li>
+                    <li>new --style=sass</li>
+                    <li>test --watch=false</li>
+                    <li>ng serve --host 0.0.0.0 --port 4201 --live-reload-port 49153</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Angular-cli generators</h2>
+                <ul>
+                    <li>ng generate component {{name}}</li>
+                    <li>ng generate directive</li>
+                    <li>ng generate pipe</li>
+                    <li>ng generate service</li>
+                    <li>ng generate interface</li>
+                    <li>ng generate module</li>
+                    <li>...</li>
+                </ul>
+                <p>https://github.com/angular/angular-cli</p>
+            </section>
+            <section>
+                <h2>Exercise</h2>
+                <p>ng new myProject</p>
+                <ul>
+                    <li>Generate components</li>
+                    <li>Run scripts</li>
+                    <li>Install dependencies (material2)</li>
+                </ul>
+            </section>
         </section>
-
-
-
 
         <!-- ===================================== -->
         <!-- ============= DEEL RYAN ============= -->
@@ -618,25 +738,15 @@ beforeEach(() => {
 					</code></pre>
             </section>
             <section>
-                <h2>Angular-cli</h2>
-                <ul>
-                    <li>ng generate component name-with-dashes</li>
-                    <li>...</li>
-                    <li>...</li>
-                    <li>...</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-            <section>
                 <h2>Exercise</h2>
-                <p>checkout out the repostitory on right tag</p>
+                <p>Checkout out the right tag of our jworks-contacts app.</p>
+                <p>Exercise2 docs:</p>
                 <ul>
                     <li>Generate components</li>
                     <li>Add tests</li>
                     <li>Build components</li>
                     <li>Add in html</li>
                 </ul>
-                <p>Running shizzle!</p>
             </section>
         </section>
         <section>
@@ -1015,41 +1125,14 @@ export class MyCmp{
 					</code></pre>
             </section>
             <section>
-                <h2>Angular-cli</h2>
-                <ul>
-                    <li>ng generate service name-with-dashes</li>
-                    <li>...</li>
-                    <li>...</li>
-                    <li>...</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-            <section>
                 <h2>Exercise</h2>
                 <p>checkout out the repostitory on right tag</p>
+                <p>Exercise3 docs:</p>
                 <ul>
-                    <li>Part 1: service</li>
-                    <li>Part 2: observables</li>
+                    <li>Generate service</li>
+                    <li>Refactor UI</li>
                 </ul>
-                <p>Running shizzle!</p>
             </section>
-            <section>
-                <h2>Exercise: Part 1</h2>
-                <ul>
-                    <li>...........</li>
-                    <li>...........</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-            <section>
-                <h2>Exercise: Part 2</h2>
-                <ul>
-                    <li>...........</li>
-                    <li>...........</li>
-                </ul>
-                <p>Running shizzle!</p>
-            </section>
-        </section>
         </section>
 
         <section style="text-align: left;">
