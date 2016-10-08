@@ -1,0 +1,864 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Jworks</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="/assets/favicon/favicon.ico">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/ordina.css" id="theme">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--Add support for earlier versions of Internet Explorer -->
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <img src="img/angular.svg" style="vertical-align: bottom;" width="40%"/>
+            <h2>Angular2 the story </br> part 2</h2>
+            <img src="img/jworks-logo.png" width="11.1%"/>
+            <br/>
+        </section>
+        <section>
+            <div class="row">
+                <div class="col-xs-6">
+                    <h2>Hi, my name is Tim.</h2>
+                    <p>
+                        CC-Lead: Automation & Tooling</br>
+                        Developer<br/>
+                        Ordina Belgium<br/>
+                        @VeeTeeDev<br/>
+                        https://github.com/VeeTeeDev
+                    </p>
+                </div>
+                <div class="col-xs-6">
+                    <h2>Hi, my name is Ryan.</h2>
+                    <p>
+                        Front-End Dev<br/>
+                        Angular pro<br/>
+                        Ordina Belgium<br/>
+                        @ryandegruyter<br/>
+                        https://github.com/ryandegruyter
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="row">
+                <div class="col-xs-6">
+                    <h2>And a big applause to our contributors!</h2>
+                    <ul>
+                        <li>Jan De Wilde for some styling</li>
+                        <li>Dimitri De Kerf (for documentation, testing, ...)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PUT CONTECT HERE -->
+        <section id="overview">
+            <h2>Topics</h2>
+            <ul>
+                <li>
+                    <strong>Routers</strong>
+                    <ul>
+                        <li>Introduction</li>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>Testing</li>
+                        <li>Exercise</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Forms</strong>
+                    <ul>
+                        <li>Introduction</li>
+                        <li>...</li>
+                        <li>...</li>
+                        <li>Testing</li>
+                        <li>Exercise</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>E2E</strong>
+                    <ul>
+                        <li>What is e2e</li>
+                        <li>Frameworks</li>
+                        <li>Protractor</li>
+                        <li>...</li>
+                        <li>...</li>
+                    </ul>
+                </li>
+                <!--Theorie-->
+            </ul>
+        </section>
+        <section>
+            <section>
+                <h2>Routers</h2>
+                <p>...</p>
+            </section>
+            <section>
+                    <h2>...</h2>
+                    <ul>
+                        <li></li>
+                        <li class="fragment">Update the bootstrapping and wrap your app in an NgModule</li>
+                        <li class="fragment">Move your directive and pipe declarations from @Component to @NgModule</li>
+                        <li class="fragment">Optionally move your providers declarations from @Component to @NgModule</li>
+                        <li class="fragment">Declare your module dependencies (FormsModule, HttpModule, etc)</li>
+                        <li class="fragment">Update the router</li>
+                    </ul>
+            </section>
+           
+        <!-- ===================================== -->
+        <!-- ============= DEEL RYAN ============= -->
+        <!-- ===================================== -->
+
+        <section>
+            <section data-background="#DF6F0C">
+                <h2 style="color: #fff;">Angular2</h2>
+            </section>
+            <section id="currentstate">
+                <h2>Current state: 3 october 2016</h2>
+                <h3>Final release version of Angular2</h3>
+                <img src="img/sem.png" width="70%"/>
+                <p>Release cadence: <strong>MAJOR release every 6 months</strong></p>
+                <p>Near future: animations, angular material 2, webworkers out of experimental, speed and payload
+                    improvements</p>
+                <p>Goal end of this year is to get a simple "hello world app" to <strong>10 KB!!</strong></p>
+            </section>
+            <section id="why">
+                <h2>Why Angular2</h2>
+                <p>Focus on mobile devices</p>
+                <p>Faster Change Detection</p>
+                <p>Improved DI</p>
+                <p>Clean code and easier to use</p>
+                <p>Embraces ES6/ECMAScript 2015/Typescript</p>
+                <p>Lazy loading, tree shaking, AoT compiling</p>
+                <p>DOM element property binding</p>
+                <p>Observable support</p>
+                <p>Component architecture, Shadow DOM support</p>
+                <p>Not only browser (Native mobile, serverside rendering, ...)</p>
+                <p>Improved testability</p>
+            </section>
+            <section id="framework">
+                <h2>Framework</h2>
+                <p>For building client web applications</p>
+                <img src="img/adwords.png" alt="">
+            </section>
+            <section>
+                <h2>Framework</h2>
+
+                <h3>For building cross platform (native) Mobile applications</h3>
+                <img src="img/ionic2.png" alt="" width="30%">
+                <img src="img/nativescript-react-native.jpg" alt="" width="50%">
+            </section>
+            <section>
+                <h2>Framework</h2>
+
+                <h3>For building cross platform Desktop applications</h3>
+                <img src="img/angular2-electron-logo.png" alt="">
+                <img src="img/electron.png" alt="">
+            </section>
+            <section section data-background-image="img/22Z8J.gif" id="nirvana">
+                <h2>
+                    Programming Nirvana</h2>
+                <h3>All platforms sharing the same codebase</h3>
+                <img src="img/electron.gif" alt="" width="50%">
+                <img src="img/mobile.gif" alt="" width="50%" style="float: left">
+            </section>
+            <section>
+                <h2 id="bb">Building blocks</h2>
+                <img src="img/overview2.png" alt="" width="80%">
+                <p>Modules, Directives, Components, Templates, Data binding, Dependency Injection, Services,
+                    Metadata
+                </p>
+            </section>
+            <section>
+                <h2>Metadata</h2>
+                <p>Tells Angular how to process a class / class property / constructor parameter</p>
+                <p>We attach metadata using decorators</p>
+                <ul>
+                    <li>@NgModule()</li>
+                    <li>@Component({ selector: 'my-app' })</li>
+                    <li>@ViewChild('elementRefName')</li>
+                    <li>@Injectable()</li>
+                    <li>@Inject()</li>
+                    <li>@Pipe()</li>
+                    <li>...</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Core</h2>
+                <h3>Components</h3>
+                <h3>Data Binding / Change detection</h3>
+                <h3>Depedency Injection</h3>
+                <h2>Extensions</h2>
+                <ul>
+                    <li>Angular Material 2</li>
+                    <li>i18n</li>
+                    <li>Animations</li>
+                    <li>Router</li>
+                    <li>Forms</li>
+                    <li>ngUpgrade</li>
+                </ul>
+            </section>
+            <section id="directives">
+                <h2>Directives</h2>
+                <strong>3 types</strong>
+                <p>Component / template directive</p>
+                <p>Structural Directive</p>
+                <p>Attribute Directive</p>
+            </section>
+            <section>
+                <h2>Structural Directive</h2>
+                <p><strong>Used for adding or removing DOM elements</strong></p>
+                <p>ngFor</p>
+                <p>ngIf</p>
+                <p>...</p>
+            </section>
+            <section>
+                <h2>Attribute Directive</h2>
+                <p><strong>Used for changing the behavior or appearance of a DOM element</strong></p>
+                <p>ngStyle</p>
+                <p>ngClass</p>
+                <p>...</p>
+            </section>
+        </section>
+        <section>
+            <section data-background="#DF6F0C" id="components">
+                <h2 style="color: #fff;">Components</h2>
+            </section>
+            <section>
+                <h2>What is a component?</h2>
+                <p>Directive with a Template</p>
+                <p>A custom HTML element</p>
+                <p>Ability to encapsulate behavior(javascript) and presentation(css)</p>
+                <p>Supports Shadow DOM (Web components, but unlike polymer locked into Angular2 framework)</p>
+            </section>
+            <section>
+                <h2>Every Angular2 application has a tree of components</h2>
+                <img src="img/component-tree.png" alt="">
+            </section>
+            <section>
+                <h2>What does a basic component look like?</h2>
+                <pre><code data-trim contenteditable>
+@Component({
+  selector: 'my-cmp',
+  templateUrl: 'my_cmp.html'
+})
+class MyCmp {
+  @Input() data: MyData;
+  @Output() customEvent: EventEmitter;
+  //...
+}
+					</code></pre>
+            </section>
+            <section>
+                <h2>Component API</h2>
+                <p>Data flows into a component via input properties. </p>
+                <p>Data flows out of a component via output properties.</p>
+                <p>You use it when you instantiate a component</p>
+                <pre><code data-trim contenteditable>
+<my-cmp [data]="someData" (customEvent)="eventHandler($event)"></my-cmp>
+</code></pre>
+                <img src="img/cmp-api.png" alt="">
+            </section>
+            <section>
+                <h2>Component Configuration Object</h2>
+                <pre><code data-trim contenteditable>
+@Component({
+  selector: 'my-cmp',
+  template: ``,
+  templateUrl: 'my_cmp.html',
+  providers: [],
+  styles: [],
+  encapsulation: ViewEncapsulation,
+  changeDetection: ChangeDetectionStrategy
+})
+					</code></pre>
+            </section>
+            <section>
+                <h2>Rendering a component</h2>
+                <p>Define a selector (prefix to prevent conflicts)</p>
+                <p>Define a template</p>
+            </section>
+            <section>
+                <h2>Providers</h2>
+                <p>Each component has its own injector</p>
+                <p>Used to inject services</p>
+            </section>
+            <section>
+                <h2>Lifecycle methods</h2>
+                <ul>
+                    <li>ngOnChange</li>
+                    <li>ngOnInit</li>
+                    <li>ngDoCheck</li>
+                    <li>ngAfterContentInit</li>
+                    <li>ngAfterContentChecked</li>
+                    <li>ngAfterViewInit</li>
+                    <li>ngAfterViewChecked</li>
+                    <li>ngOnDestroy</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Component architecture</h2>
+                <p>React inspired</p>
+                <p>Dumb components (presentational)</p>
+                <p>Smart components (container)</p>
+                <img src="img/hxusLJ2.png" alt="">
+            </section>
+            <section id="test-comp">
+                <h2>Testing a component</h2>
+                <ul>
+                    <li>Isolated</li>
+                    <li>Shallow</li>
+                    <li>Integrated / deep</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Component testing: isolated</h2>
+                <ul>
+                    <li>Used for testing components without rendering them</li>
+                    <li>Test like any other Typescript class / Javascript object</li>
+                    <li>Easy to create mocks of dependencies with jasmine</li>
+                </ul>
+                <pre><code data-trim contenteditable>
+beforeEach(() => {
+    mockService = jasmine.createSpyObj('myService', ['getContact']);
+    component = new MyComponent(mockService);
+  });
+					</code></pre>
+                <pre><code data-trim contenteditable>
+   mockService.getContact.and.returnValue(Promise.resolve(mockResponse));
+					</code></pre>
+            </section>
+            <section>
+                <h2>Component testing: Shallow</h2>
+                <p>Render the template</p>
+                <p>Isolated by not rendering the component's children</p>
+                <p>Use the <strong>TestBed</strong> utility class</p>
+                <pre><code data-trim contenteditable>
+beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [AppComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    });
+    fixture = TestBed.createComponent(AppComponent);
+  });
+					</code></pre>
+            </section>
+            <section>
+                <h2>Component testing: Integrated</h2>
+                <p>Exercise the integration of components</p>
+                <pre><code data-trim contenteditable>
+beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: ['MdInputModule', 'MdCardModule']
+      declarations: [AppComponent],
+      providers: ['ContactsService']
+    });
+    fixture = TestBed.createComponent(AppComponent);
+  });
+					</code></pre>
+            </section>
+            <section>
+                <h2>Exercise</h2>
+                <p>Checkout out the right tag of our jworks-contacts app.</p>
+                <p>Exercise2 docs:</p>
+                <ul>
+                    <li>Generate components</li>
+                    <li>Add tests</li>
+                    <li>Build components</li>
+                    <li>Add in html</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section data-background="#DF6F0C">
+                <h2 style="color: #fff;">Modules</h2>
+            </section>
+            <section id="angular2-modules">
+                <h2>Modules</h2>
+                <h3>ES2015 Modules</h3>
+                <h3>Angular Modules</h3>
+            </section>
+            <section id="modular">
+                <h2>ES2015 module system</h2>
+                <pre><code data-trim contenteditable>
+export const AUTH_MSG: string = `Authorizing`;
+					</code></pre>
+                <pre><code data-trim contenteditable>
+import { AUTH_MSG } from '../constants/';
+					</code></pre>
+                <p>Create a barrel to export multiple modules</p>
+
+                <!-- easier to visually discover files, prevents hidden exports -->
+                <p>Each module should export 1 thing</p>
+            </section>
+            <section>
+                <h2>What are Angular2 modules?</h2>
+                <p>Group of inter-related Angular2 primitives</p>
+                <p>Every application has atleast 1 root module</p>
+                <ul>
+                    <li>Directives</li>
+                    <li>Pipes</li>
+                    <li>Services</li>
+                    <li>Components</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Example modules that come with the framework</h2>
+                <p>Reactive forms</p>
+                <p>Router module</p>
+                <p>Browser module</p>
+            </section>
+            <section id="sample-module">
+                <h2>@NgModule Decorator</h2>
+                <pre><code data-trim contenteditable>
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent, MyComboboxComponent,
+                    CollapsibleDirective, CustomCurrencyPipe],
+  imports: [BrowserModule],
+  exports: [MyComboboxComponent],
+  providers: [UserService, LessonsService]
+})
+export class ExampleModule {
+
+}
+					</code></pre>
+                <p><strong>declarations</strong>: define ownership</p>
+                <p><strong>imports</strong>: import other modules</p>
+                <p><strong>exports</strong>: export a declaration for other modules</p>
+                <p><strong>providers</strong>: global services</p>
+            </section>
+            <section>
+                <h2>Root module</h2>
+                <pre><code data-trim contenteditable>
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent, MyComboboxComponent,
+                    CollapsibleDirective, CustomCurrencyPipe],
+  imports: [BrowserModule],
+  exports: [MyComboboxComponent]
+  providers: [UserService, LessonsService],
+  bootstrap: [AppComponent]
+})
+export class ExampleModule {
+
+}
+					</code></pre>
+                <h4>bootstrap: []</h4>
+                <h4>import the browsermodule</h4>
+            </section>
+            <section>
+                <h2>Module Providers</h2>
+                <p>Enrich the global application state</p>
+                <p>registered with the root injector</p>
+            </section>
+            <section>
+                <h2>Lazy loading</h2>
+                <h3>Modules will get a custom injector</h3>
+            </section>
+            <section>
+                <h2>Bootstrap your root module</h2>
+                <h4>JIT, Just in time, dynamic bootstrap</h4>
+                <h4>AoT, Ahead of Time, static boostrap</h4>
+            </section>
+            <section>
+                <h2>JIT, Just in time, dynamic bootstrap</h2>
+                <pre><code data-trim contenteditable>
+import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+
+
+@NgModule({...})
+export class AppModule {
+
+}
+
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+					</code></pre>
+                <p>Compiler is bundled with the app</p>
+                <p>Compiles the app at runtime</p>
+                <p>Good during development</p>
+                <p>Bigger application bundle => bigger filesize</p>
+            </section>
+            <section>
+                <h2>AoT, Ahead of Time, static boostrap</h2>
+                <pre><code data-trim contenteditable>
+npm install @angular/compiler-cli --save
+
+./node_modules/.bin/ngc -p ./src
+
+import { platformBrowser } from '@angular/platform-browser';
+import { AppModuleNgFactory } from './main.ngfactory';
+
+// Launch with the app module factory.
+platformBrowser().bootstrapModuleFactory(AppModuleNgFactory);
+					</code></pre>
+                <p>Compiler is <strong>NOT</strong> bundled with the app</p>
+                <p>Compiles the app during build</p>
+                <p>Recommended for production</p>
+                <p>No compiler => Smaller bundle => smaller filesize</p>
+                <p>NgModule metadata helps with AoT</p>
+            </section>
+            <section>
+                <h2>Feature modules</h2>
+                <p>Extend the global application</p>
+                <p>Need CommonModule</p>
+            </section>
+            <section>
+                <h2>Data binding</h2>
+                <p>Component
+                    <-> template communication</p>
+                <p>4 forms of data binding</p>
+                <ul>
+                    <li>{{Interpolation}} -> to the dom</li>
+                    <li>[one way input] -> to the dom</li>
+                    <li>(one way output)
+                        <- from the dom
+                    </li>
+
+                    <!-- need the ngModel directive
+            data flows to the dom input, but when the user changes it flows back to the component
+            -->
+                    <li>[(two way)]
+                        <-> both directions
+                    </li>
+                </ul>
+                <br/>
+                <img src="img/databinding.png" alt="">
+                <img src="img/component-databinding.png" alt="">
+            </section>
+            <section>
+                <h2>Component communication</h2>
+                <p>Parent component
+                    <-> child component</p>
+                <img src="img/parent-child-binding.png">
+            </section>
+            <section>
+                <h2>One way binding syntax: From component to template</h2>
+                <h3>Interpolation</h3>
+                <h3>Property binding</h3>
+                <h3>Attribute property binding</h3>
+                <h3>Class property binding</h3>
+                <h3>Style property binding</h3>
+                <p>Use template expression (produces value, getter)</p>
+            </section>
+            <section>
+                <h2>Interpolation</h2>
+                <pre><code data-trim contenteditable>
+<span>{{ Hello world }}</span>
+<img src="{{ basePath + imgPath }}" alt="{{ imgDescription }}">
+					</code></pre>
+                <p>Double curly braces {{}}</p>
+                <p>Most often used between HTML element tags</p>
+            </section>
+            <section>
+                <h2>Property binding</h2>
+                <pre><code data-trim contenteditable>
+<span [innerHTML]="Hello World"></span>
+<img [src]="basePath + imgPath" [alt]="imgDescription">
+					</code></pre>
+                <p>Square brackets []</p>
+                <p>Most often used with attributes</p>
+            </section>
+            <section>
+                <h2>Interpolation vs Property binding?</h2>
+                <p>Choose wichever you or your team prefers</p>
+            </section>
+            <section id="attr-binding">
+                <h2>Attribute Property binding</h2>
+                <pre><code data-trim contenteditable>
+<svg [attr.x]="xVal"></svg>
+					</code></pre>
+                <p>Binding target prefixed with attr</p>
+                <p>Used when there is no 1 to 1 mapping between attribute and DOM property</p>
+            </section>
+            <section id="class-binding">
+                <h2>Class Property binding</h2>
+                <pre><code data-trim contenteditable>
+<span [class.red]="hasError"></span>
+					</code></pre>
+                <p>Binding target prefixed with class</p>
+                <p>Used for adding or removing css classes</p>
+                <p>Evaluates the expression to a boolean</p>
+            </section>
+            <section id="style-binding">
+                <h2>Style Property binding</h2>
+                <pre><code data-trim contenteditable>
+<span [style.background-color]="hasError ? red : green"></span>
+					</code></pre>
+                <p>Binding target prefixed with style</p>
+                <p>Setting inline styles dynamically</p>
+            </section>
+            <section>
+                <h2>One way binding syntax: From template to component</h2>
+                <h3>Event binding</h3>
+                <p>Use template statements (side effect, setter)</p>
+                <pre><code data-trim contenteditable>
+<button (click)="onClick()"></button>
+					</code></pre>
+            </section>
+            <section>
+                <h2>Two way binding syntax: Component
+                    <-> template</h2>
+                <h3>ngModel</h3>
+                <p>Use template expression (produces value, getter)</p>
+                <p>FormsModule is required</p>
+                <pre><code data-trim contenteditable>
+<input [(ngModel)]="obj.prop">
+					</code></pre>
+            </section>
+            <section id="cd">
+                <h2>Change detection</h2>
+                <img src="img/cd-tree.png" alt="" width="50%">
+                <p>When an expression inside the template changes, the view should update and rerender</p>
+                <ul>
+                    <li>Watch the data for changes (Change detection)</li>
+                    <li>Propagate the change to the DOM</li>
+                </ul>
+
+            </section>
+            <!--<section section data-background-image="img/yCIyDc0.gif">-->
+            <!--<h2>Time to practice</h2>-->
+            <!--</section>-->
+        </section>
+        <section>
+            <section data-background="#DF6F0C">
+                <h2 style="color: #fff;">Obervables and services</h2>
+            </section>
+            <section id="dep">
+                <h2>Dependency Injection</h2>
+                <h3>Central idea</h3>
+                <p>We don't create new instances of classes or objects. We request an instance in the constructor
+                    parameter
+                    list using a type token</p>
+                <pre><code data-trim contenteditable>
+@Injectable()
+class MyService{
+    private _otherService: OtherService;
+    constructor(otherService: OtherService){
+        this._otherService = otherService;
+    }
+}
+					</code></pre>
+            </section>
+            <section>
+                <h2>Standalone</h2>
+                <p>DI System can be used standalone</p>
+                <p>ReflectiveInjector API</p>
+            </section>
+            <section>
+                <h2>Injectors</h2>
+                <p>Always 1 root injector</p>
+                <p>Multiple child injectors</p>
+                <p>Allows for multiple instances of the same type</p>
+            </section>
+            <section>
+                <h3>How many injectors?</h3>
+                <p>
+                    Angular doesn't literally create a separate injector for each component. Every component doesn't
+                    need its own injector and
+                    it would be horribly inefficient to create masses of injectors for no good purpose. But it is
+                    true
+                    that every component has an injector (even if it shares that injector with another component)
+                    and
+                    there may be many different injector instances operating at different levels of the component
+                    tree.
+                    It is useful to pretend that every component has its own injector.
+                </p>
+            </section>
+            <section>
+                <h2>Why DI?</h2>
+                <p>No new operator all over your codebase</p>
+                <p>Switch between different implementations</p>
+                <p>Program to an interface instead of a concrete type</p>
+                <p>Easy to mock and test</p>
+            </section>
+            <section>
+                <h2>Program to an interface</h2>
+                <p>Interfaces are a compile time artifact</p>
+                <p>They dissapear once the application gets compiled</p>
+                <p>Injector cannot map an interface token</p>
+                <br/>
+                <h4 style="color: red;">Class implements class</h4>
+                <h4 style="color: green;">OpaqueToken</h4>
+            </section>
+            <section>
+                <h2>How to use it?</h2>
+                <p>Register a provider in a component/ngmodule <strong>providers</strong> metadata property</p>
+                <p>A provider provides a concrete instance to the injector</p>
+                <pre><code data-trim contenteditable>
+@Component({
+    providers: [OtherService]
+})
+class MyCmp{
+    private _otherService: OtherService;
+    constructor(otherService: OtherService){
+        this._otherService = otherService;
+    }
+}
+					</code></pre>
+            </section>
+            <section id="observables">
+                <h2>Observables</h2>
+                <p>RxJS</p>
+                <p>Event based programming / Reactive programming</p>
+                <p>A collection of values over any amount of time</p>
+                <p>Highly composable</p>
+                <p>Push based</p>
+            </section>
+            <section>
+                <h2>HttpModule</h2>
+                <p>Observables are used to make AJAX requests</p>
+                <p>You can still use promises</p>
+                <p>But observables are more powerfull</p>
+            </section>
+            <section>
+                <h2>Advantages Observables over Promises</h2>
+                <p>Able to cancel a request</p>
+                <p>Easier to handle progress events</p>
+                <p>Reusable</p>
+                <p>Multiple values</p>
+                <p>Composable</p>
+            </section>
+            <section>
+                <h2>Observable binding syntax</h2>
+                <h3>async pipe</h3>
+                <p>Can also be used to bind promises</p>
+                <pre><code data-trim contenteditable>
+@Component({...})
+export class MyCmp{
+    interval$: Observable;
+
+    constructor(){
+        this.interval$ = Observable.interval(1000).map(x=>"Count: "+x);
+    }
+}
+					</code></pre>
+                <pre><code data-trim contenteditable>
+<span>{{interval$ | async}}</span>
+					</code></pre>
+            </section>
+            <section>
+                <h2>Exercise</h2>
+                <p>checkout out the repostitory on right tag</p>
+                <p>Exercise3 docs:</p>
+                <ul>
+                    <li>Generate service</li>
+                    <li>Refactor UI</li>
+                </ul>
+            </section>
+        </section>
+
+        <section style="text-align: left;">
+            <h2>Regards Jworks!</h2>
+            <p class="fragment">Try not to get lost...!</p>
+        </section>
+        <section style="text-align: left;" data-background="assets/img/jworks-wallpaper-3.jpg">
+            <h2>&nbsp;</h2>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+        transition: 'convex',
+        center: true,
+        dependencies: [
+            // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+            {
+                src: 'lib/js/classList.js',
+                condition: function () {
+                    return !document.body.classList;
+                }
+            },
+            // Interpret Markdown in <section> elements
+            // { src: 'plugin/markdown/marked.js' },
+            {
+                src: 'plugin/markdown/marked.js',
+                condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            // { src: 'plugin/markdown/markdown.js' },
+            {
+                src: 'plugin/markdown/markdown.js',
+                condition: function () {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            },
+            // Syntax highlight for <code> elements
+            {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            },
+            // Zoom in and out with Alt+click
+            {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            },
+            // Speaker notes
+            {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }
+        ]
+
+    });
+</script>
+</body>
+</html>

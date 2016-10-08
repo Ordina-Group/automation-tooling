@@ -1,0 +1,169 @@
+/**
+ * Custom styling for each presentation.
+ *
+ * Copyright (C) 2016 JWorks - http://www.ordina.be
+ */
+$orange: #DF6F0C;
+$white: #FFF;
+$gray: #a5a5a5;
+
+span.custom-blue {
+    color: rgb(55, 157, 248);
+}
+
+.timeline-container {
+    padding: 1em;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    height: 700px;
+}
+
+.timeline-card {
+    background: $orange;
+    border-radius: 4px;
+    box-shadow: 0 2px 0 darken($white, 10%);
+}
+
+.timeline {
+    position: relative;
+    padding: 2em 0;
+    overflow: auto !important;
+    margin: {
+        top: 2em;
+        bottom: 2em;
+    }
+    // Timline line
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 22px;
+        height: 100%;
+        width: 4px;
+        background: $orange;
+    }
+
+    .timeline-header {
+        margin: 0 auto 1em;
+        position: relative;
+        clear: both;
+        max-width: 7em;
+        box-shadow: 0 0 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0 0 0 1em;
+        z-index: 1;
+        display: block;
+    }
+
+    li {
+        padding: 1em;
+        margin-bottom: 1em;
+        position: relative;
+
+        // Orange arrow
+        &:before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            right: 100%;
+            height: 0;
+            width: 0;
+            border: 12px solid transparent;
+            border-right: 12px solid $orange;
+        }
+    }
+
+    h3 {
+        margin-top: 0;
+        color: $white;
+        font-size: 100%;
+    }
+
+    .timeline-thumb {
+        position: absolute;
+        top: 16px;
+        left: -56px;
+        width: 40px;
+        height: 40px;
+        background-color: $white;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px $orange, inset 0 2px 0 rgba(#000, .08), 0 3px 0 4px rgba(#000, .05);
+
+        img {
+            display: block;
+            width: 24px;
+            height: 24px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            margin-left: -12px;
+            margin-top: -12px;
+        }
+    }
+}
+
+@media screen and (min-width: 40em) {
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .timeline {
+        &:before {
+            left: 50%;
+        }
+
+        ul {
+            padding-left: 0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        li {
+            width: 42%;
+
+            .date {
+                position: absolute;
+                width: 100%;
+                left: 125%;
+                top: 16px;
+                font-size: 75%;
+                color: $gray;
+            }
+
+            .timeline-thumb {
+                left: 380px;
+            }
+        }
+
+        li:nth-child(even) {
+            float: right;
+            left: 48px;
+            //Move the date to the other side
+            .date {
+                right: 125%;
+                top: 20px;
+                left: auto;
+                text-align: right;
+            }
+            .timeline-thumb {
+                left: -62px;
+            }
+        }
+
+        li:nth-child(odd) {
+            float: left;
+            right: 48px;
+            // Orange arrow, pointing the other site
+            &:before {
+                top: 24px;
+                left: 100%;
+                border-color: transparent;
+                border-left-color: $orange;
+            }
+        }
+    }
+}
