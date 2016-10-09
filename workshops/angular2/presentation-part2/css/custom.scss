@@ -167,3 +167,38 @@ span.custom-blue {
         }
     }
 }
+
+#cat-dashboard {
+    margin: auto;
+    background-color: $gray;
+    width: 700px;
+    height: 450px;
+    position: relative;
+    border-radius: 4px;
+    color: white;
+    text-align: right;
+    padding: 20px;
+
+    #cat-list {
+        background-color: $orange;
+        width: 350px;
+        height: 400px;
+        top: 25px;
+        left: 25px;
+        position: absolute;
+        border-radius: 4px;
+        padding: 20px;
+
+        #cat-details {
+            background-color: $white;
+            width: 300px;
+            height: 100px;
+            bottom: 25px;
+            left: 25px;
+            position: absolute;
+            border-radius: 4px;
+            padding: 20px;
+            color: black;
+        }
+    }
+}

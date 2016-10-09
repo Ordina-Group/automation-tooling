@@ -117,3 +117,33 @@ span.custom-blue {
       left: 100%;
       border-color: transparent;
       border-left-color: #DF6F0C; } }
+
+#cat-dashboard {
+  margin: auto;
+  background-color: #a5a5a5;
+  width: 700px;
+  height: 450px;
+  position: relative;
+  border-radius: 4px;
+  color: white;
+  text-align: right;
+  padding: 20px; }
+  #cat-dashboard #cat-list {
+    background-color: #DF6F0C;
+    width: 350px;
+    height: 400px;
+    top: 25px;
+    left: 25px;
+    position: absolute;
+    border-radius: 4px;
+    padding: 20px; }
+    #cat-dashboard #cat-list #cat-details {
+      background-color: #FFF;
+      width: 300px;
+      height: 100px;
+      bottom: 25px;
+      left: 25px;
+      position: absolute;
+      border-radius: 4px;
+      padding: 20px;
+      color: black; }

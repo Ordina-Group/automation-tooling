@@ -145,10 +145,247 @@
                         <li class="fragment">Update the router</li>
                     </ul>
             </section>
-           
+        </section>
+
         <!-- ===================================== -->
         <!-- ============= DEEL RYAN ============= -->
         <!-- ===================================== -->
+
+        <!-- ===================================== -->
+        <!-- ============= DEEL DIMI ============= -->
+        <!-- ===================================== -->
+
+        <section>
+            <section data-background="#DF6F0C">
+                <h2 style="color: #fff;">Router</h2>
+                <h3>Navigating through our app</h3>
+            </section>
+            <section>
+                <h2>How does navigation works?</h2>
+                <ul>
+                    <li>URL changes in browser</li>
+                    <li>Router looks for corresponding route to determine matching component</li>
+                    <li>Router replaces components</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Capabilities</h2>
+                <ul>
+                    <li>Navigating though URLs</li>
+                    <li>Passing parameters</li>
+                    <li>Links on page</li>
+                    <li>Users actions such as clicks</li>
+                    <li>History, back button browser</li>
+                </ul>
+            </section>
+            <section>
+                <h2>RouterModule</h2>
+                <p>Angular module for navigation through application</p>
+                <pre>
+                    <code data-trim class="javascript">
+RouterModule.forRoot([
+    { path: 'home', component: HomeComponent },
+    { path: 'cat', component: CatComponent },
+    { path: '', component: HomeComponent },
+    { path: '**', component: PageNotFoundComponent }
+])
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>&lt;base href="/"&gt;</h2>
+                <ul>
+                    <li>First element in head</li>
+                    <li>Compose navigation URLs</li>
+                    <li>Required for most applications</li>
+                </ul>
+                <pre>
+                    <code data-trim>
+&lt;html&gt;
+    &lt;head&gt;
+        <base href="/">
+    &lt;/head&gt;
+    &lt;body&gt;
+        <awesome-app></awesome-app>
+    &lt;/body&gt;
+&lt;/html&gt;
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>Router Outlet</h2>
+                <p>Router displays component inside router outlet</p>
+                <pre>
+                    <code data-trim>
+<router-outlet></router-outlet>
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>RouterLink & RouterLinkActive</h2>
+                <ul>
+                    <li>Defines path for Router</li>
+                    <li>Add css for active link</li>
+                </ul>
+                <pre>
+                    <code data-trim>
+<h1>Angular Router</h1>
+<nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+</nav>
+<router-outlet></router-outlet>
+                  </code>
+              </pre>
+            </section>
+            <section>
+                <h2>Feature modules</h2>
+                <p>Module in our app containig specific feature</p>
+                <pre>
+                    <code data-trim class="javascript">
+RouterModule.forChild([
+    { path: 'cats', component: CatListComponent },
+    { path: 'cat/:id', component: CatDetailComponent }
+])
+                    </code>
+                </pre>
+                <p>Configuration of router with RouterModule.forChild()</p>
+            </section>
+            <section>
+                <h2>Navigating from Component</h2>
+                <p>Use navigate function of router, optionally passing params with it</p>
+                <pre>
+                    <code data-trim class="javascript">
+export class CatListComponent {
+
+    constructor(private router: Router) {}
+
+    onSelect(cat: Cat) {
+      this.router.navigate(['/cat', cat.id]);
+    }
+}
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>ActivatedRoute</h2>
+                <p>Service which provides route information such as URL, params,...</p>
+                <pre>
+                    <code data-trim class="javascript">
+export class CatDetailComponent implements OnInit {
+
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private service: CatService
+    ) {}
+
+    ngOnInit() {
+      this.route.params.forEach((params: Params) => {
+         let id = params['id'];
+         this.service.getCat(id).then(cat => this.cat = cat);
+       });
+    }
+
+    gotoCats() {
+        this.router.navigate(['/cats']);
+    }
+
+}
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>Child routes</h2>
+                <p>Allows embedding of multiple routes</p>
+                <div id="cat-dashboard">
+                    Cat Dashboard
+                    <div id="cat-list">
+                        Cat List
+                        <div id="cat-details">Cat Details</div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>Child routes</h2>
+                <ul>
+                    <li>Using RouterOutlet of CatDashboardComponent instead of AppComponent</li>
+                    <li>Router appends child paths to parent URL: /cat-dashboard/catId1</li>
+                </ul>
+            </section>
+            <section>
+                <h2>RouterModule configuration</h2>
+                <pre>
+                    <code data-trim class="javascript">
+RouterModule.forChild([
+    {
+        path: 'cat-dashboard',
+        component: CatDashboardComponent,
+        children: [
+            {
+                path: '',
+                component: CatListComponent,
+                children: [
+                    {
+                        path: ':id',
+                        component: CatDetailComponent
+                    }
+                ]
+            }
+        ]
+    }
+])
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>Testing routed component</h2>
+                <p>Stub the Router and configure it in the Test</p>
+                <pre>
+                    <code data-trim class="javascript">
+class RouterStub {
+    navigateByUrl(url: string) { return url; }
+}
+                    </code>
+                </pre>
+                <pre>
+                    <code data-trim class="javascript">
+beforeEach( async(() => {
+    TestBed.configureTestingModule({
+        providers: [
+            { provide: CatService,  useClass: CatServiceStub },
+            { provide: Router,      useClass: RouterStub }
+        ]
+    })
+    .compileComponents().then(() => {
+        fixture = TestBed.createComponent(CatDashboardComponent);
+        component = fixture.componentInstance;
+});
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>Testing routed component</h2>
+                <p>Check if navigateUrl has been called with expected url</p>
+                <pre>
+                    <code data-trim class="javascript">
+it('should tell Router to navigate when a cat was clicked',
+    inject([Router], (router: Router) => {
+
+    const spy = spyOn(router, 'navigateByUrl');
+
+    catClick();
+
+    const navArgs = spy.calls.first().args[0];
+
+    const id = component.cats[0].id;
+    expect(navArgs).toBe('/cat/' + id,
+    }
+));
+                    </code>
+                </pre>
+            </section>
+        </section>
 
         <section>
             <section data-background="#DF6F0C">
