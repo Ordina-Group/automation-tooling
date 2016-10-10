@@ -145,14 +145,14 @@
                 <h2>How does navigation works?</h2>
                 <ul>
                     <li>URL changes in browser</li>
-                    <li>Router looks for corresponding route to determine matching component</li>
+                    <li>Router determines matching component for route</li>
                     <li>Router replaces components</li>
                 </ul>
             </section>
             <section>
                 <h2>Capabilities</h2>
                 <ul>
-                    <li>Navigating though URLs</li>
+                    <li>Navigating through URLs</li>
                     <li>Passing parameters</li>
                     <li>Links on page</li>
                     <li>Users actions such as clicks</li>
@@ -178,6 +178,7 @@ RouterModule.forRoot([
                 <ul>
                     <li>First element in head</li>
                     <li>Compose navigation URLs</li>
+                    <li>Root for server</li>
                     <li>Required for most applications</li>
                 </ul>
                 <pre>
@@ -195,7 +196,7 @@ RouterModule.forRoot([
             </section>
             <section>
                 <h2>Router Outlet</h2>
-                <p>Router displays component inside router outlet</p>
+                <p>Router displays component in router outlet</p>
                 <pre>
                     <code data-trim>
 <router-outlet></router-outlet>
@@ -211,30 +212,19 @@ RouterModule.forRoot([
                 <pre>
                     <code data-trim>
 <h1>Angular Router</h1>
+
 <nav>
     <a routerLink="/home" routerLinkActive="active">Home</a>
-    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a routerLink="/cat" routerLinkActive="active">Cats</a>
 </nav>
+
 <router-outlet></router-outlet>
                   </code>
               </pre>
             </section>
             <section>
-                <h2>Feature modules</h2>
-                <p>Module in our app containig specific feature</p>
-                <pre>
-                    <code data-trim class="javascript">
-RouterModule.forChild([
-    { path: 'cats', component: CatListComponent },
-    { path: 'cat/:id', component: CatDetailComponent }
-])
-                    </code>
-                </pre>
-                <p>Configuration of router with RouterModule.forChild()</p>
-            </section>
-            <section>
                 <h2>Navigating from Component</h2>
-                <p>Use navigate function of router, optionally passing params with it</p>
+                <p>Use <i>navigate</i> function of router, optionally passing params with it</p>
                 <pre>
                     <code data-trim class="javascript">
 export class CatListComponent {
@@ -256,13 +246,13 @@ export class CatListComponent {
 export class CatDetailComponent implements OnInit {
 
     constructor(
-        private route: ActivatedRoute,
+        private activatedRoute: ActivatedRoute,
         private router: Router,
         private service: CatService
     ) {}
 
     ngOnInit() {
-      this.route.params.forEach((params: Params) => {
+      this.activatedRoute.params.subscribe((params: Params) => {
          let id = params['id'];
          this.service.getCat(id).then(cat => this.cat = cat);
        });
@@ -277,13 +267,26 @@ export class CatDetailComponent implements OnInit {
                 </pre>
             </section>
             <section>
+                <h2>Feature modules</h2>
+                <p>Module in our app containing a specific feature</p>
+                <pre>
+                    <code data-trim class="javascript">
+RouterModule.forChild([
+    { path: 'cat-list', component: CatListComponent },
+    { path: 'cat/:id', component: CatDetailComponent }
+])
+                    </code>
+                </pre>
+                <p>Configuration of router with RouterModule.forChild()</p>
+            </section>
+            <section>
                 <h2>Child routes</h2>
                 <p>Allows embedding of multiple routes</p>
                 <div id="cat-dashboard">
                     Cat Dashboard
                     <div id="cat-list">
                         Cat List
-                        <div id="cat-details">Cat Details</div>
+                        <div id="cat-details">Intro / Cat Details</div>
                     </div>
                 </div>
             </section>
@@ -291,7 +294,7 @@ export class CatDetailComponent implements OnInit {
                 <h2>Child routes</h2>
                 <ul>
                     <li>Using RouterOutlet of CatDashboardComponent instead of AppComponent</li>
-                    <li>Router appends child paths to parent URL: /cat-dashboard/catId1</li>
+                    <li>Router appends child paths to parent URL:<br/>/cat-dashboard/cat-list/1</li>
                 </ul>
             </section>
             <section>
@@ -305,9 +308,16 @@ RouterModule.forChild([
         children: [
             {
                 path: '',
+                redirectTo: '/cat-list',
+                pathMatch: 'full'
+            }, {
+                path: '/cat-list',
                 component: CatListComponent,
                 children: [
                     {
+                        path: '',
+                        component: CatIntroComponent
+                    }, {
                         path: ':id',
                         component: CatDetailComponent
                     }
@@ -360,7 +370,7 @@ it('should tell Router to navigate when a cat was clicked',
     const navArgs = spy.calls.first().args[0];
 
     const id = component.cats[0].id;
-    expect(navArgs).toBe('/cat/' + id,
+    expect(navArgs).toBe('/cat/' + id);
     }
 ));
                     </code>
