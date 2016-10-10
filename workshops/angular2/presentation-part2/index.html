@@ -596,9 +596,116 @@ $ ng e2e
                     <li class="fragment">Check if login was successful</li>
                 </ul>
             </section>
+            <section>
+                <h2>Example: Selectors / Actions</h2>
+                <ul>
+                    <li class="fragment">browser.get('url/id/edit');</li>
+                    <li class="fragment">element(by.css('aSeLeCtOr')); //ElementFinder</li>
+                    <li class="fragment">element.all(by.css('aSeLeCtOr')).get(0); //ElementFinder </li>
+                    <li class="fragment">this.$button.click(); //Promise</li>
+                    <li class="fragment">describe it expect(browser.getTitle()).toEqual('Super Calculator');</li>
+                    <li class="fragment">...</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Example: PO - Page Objects</h2>
+                <h4>Map our pages with e2e page objects</h4>
+                <pre>
+                    <code data-trim class="javascript">
+export class LoginPage extends PageObject{
+  private usernam;
+  private password;
+  private loginButton;
 
+  constructor() {
+    super();
+    this.$username = element(by.css('#username'));
+    this.$password = element(by.css('.js-password'));
+    this.$loginButton = element(by.css('.js-login'));
+  }
 
+  getUsernameEl():ElementFinder {
+      return this.$username;
+  }
 
+  getPasswordEl():ElementFinder{
+    return this.$password;
+  }
+
+  setPassword(password:string){
+    this.$password.sendKeys(password);
+  }
+
+  clickOnSave():Promise<void>{
+    return this.saveButton.click();
+  }
+}
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>Example: Write scenario</h2>
+                <pre>
+                    <code data-trim class="javascript">
+import {LoginPage} from './login.po';
+
+describe('Login Page', function () {
+  let page: LoginPage;
+
+  beforeEach(() => {
+    page = new LoginPage();
+    page.navigateTo();
+  });
+
+  it('should have a username field', ()=> {
+    page.getUsernameEl()
+      .isPresent()
+      .then((isPresent: boolean)=> {
+        expect(isPresent).toBeTruthy();
+      });
+  });
+
+  it('should have aa password field', ()=> {
+    page.getPasswordEl()
+      .isPresent()
+      .then((isPresent: boolean)=> {
+        expect(isPresent).toBeTruthy();
+      });
+  });
+
+  it('should have a login button', ()=> {
+    page.getLoginEl()
+      .isPresent()
+      .then((isPresent: boolean)=> {
+        expect(isPresent).toBeTruthy();
+      });
+  });
+
+  it('should login with creds on click', ()=> {
+    page.setUsername();
+    page.setPassword();
+    page.login().then(()=> {
+        let welcomePage = new WelcomePage();
+        welcomePage.getContainer()
+          .isPresent()
+          .then((detailsPresent: boolean)=> {
+            expect(detailsPresent).toBeTruthy();
+          });
+    });
+  });
+});
+                    </code>
+                </pre>
+            </section>
+            <section>
+                <h2>Exercise: Test flow from list to edit</h2>
+                <ul>
+                    <li>Navigate to some pages</li>
+                    <li>Click avatar to navigate to details</li>
+                    <li>Click edit to edit current contact</li>
+                    <li>Sendkeys and save (e.g. website)</li>
+                </ul>
+            </section>
 
 
         </section>
