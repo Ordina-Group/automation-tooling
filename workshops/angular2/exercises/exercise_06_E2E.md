@@ -1,4 +1,4 @@
-# Exercise: Implement a detail page and a router for navigation.
+# Exercise: Implement some e2e tests.
 
 E2E testing our app so far.
 Depending on our unit tests, we need to test some flows...
