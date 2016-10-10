@@ -68,6 +68,8 @@
                         https://github.com/VeeTeeDev
                     </p>
                 </div>
+        </section>
+        <section>
                 <div class="col-xs-6">
                     <h2>Hi, my name is Ryan.</h2>
                     <p>
@@ -81,13 +83,15 @@
             </div>
         </section>
         <section>
-            <div class="row">
                 <div class="col-xs-6">
-                    <h2>And a big applause to our contributors!</h2>
-                    <ul>
-                        <li>Jan De Wilde for some styling</li>
-                        <li>Dimitri De Kerf (for documentation, testing, ...)</li>
-                    </ul>
+                    <h2>Hi, my name is Ryan.</h2>
+                    <p>
+                        Front-End Ninja<br/>
+                        Angular2 enthousiast<br/>
+                        Ordina Belgium<br/>
+                        @dimitridekerf<br/>
+                        https://github.com/dimitridekerf
+                    </p>
                 </div>
             </div>
         </section>
@@ -95,38 +99,33 @@
         <!-- PUT CONTECT HERE -->
         <section id="overview">
             <h2>Topics</h2>
+            <strong>Routers</strong>
             <ul>
-                <li>
-                    <strong>Routers</strong>
-                    <ul>
-                        <li>Introduction</li>
-                        <li>...</li>
-                        <li>...</li>
-                        <li>Testing</li>
-                        <li>Exercise</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>Forms</strong>
-                    <ul>
-                        <li>Introduction</li>
-                        <li>...</li>
-                        <li>...</li>
-                        <li>Testing</li>
-                        <li>Exercise</li>
-                    </ul>
-                </li>
-                <li>
-                    <strong>E2E</strong>
-                    <ul>
-                        <li>What is e2e</li>
-                        <li>Frameworks</li>
-                        <li>Protractor</li>
-                        <li>...</li>
-                        <li>...</li>
-                    </ul>
-                </li>
-                <!--Theorie-->
+                <li>Introduction</li>
+                <li>Theory</li>
+                <li>Examples</li>
+                <li>Exercise</li>
+            </ul>
+        </section>
+        <section>
+            <strong>Forms</strong>
+            <ul>
+                <li>Introduction</li>
+                <li>Template forms</li>
+                <li>Reactive forms</li>
+                <li>Validation</li>
+                <li>Testing</li>
+                <li>Exercise</li>
+            </ul>
+        </section>
+        <section>
+            <strong>E2E</strong>
+            <ul>
+                <li>What is e2e</li>
+                <li>Frameworks</li>
+                <li>Protractor</li>
+                <li>Example</li>
+                <li>Exercise</li>
             </ul>
         </section>
 
@@ -366,29 +365,163 @@ it('should tell Router to navigate when a cat was clicked',
             </section>
         </section>
 
-
-
-
         <!-- ===================================== -->
-        <!-- ============= DEEL RYAN ============= -->
-        <!-- ===================================== -->
+                <!-- ============= DEEL RYAN ============= -->
+                <!-- ===================================== -->
+                <section>
+                    <section data-background="#DF6F0C" id="forms">
+                        <h2 style="color: #fff;">Angular2 Forms</h2>
+                    </section>
+                    <section>
+                        <h2>3 ways to create forms</h2>
+                        <h3>Template driven forms</h3>
+                        <h3>Reactive forms</h3>
+                        <h3>Mix of both</h3>
+                    </section>
+                    <section>
+                        <h2>Template driven forms</h2>
+                        <p>Template source of truth</p>
+                        <p>validation and controls are defined in the template</p>
+                        <p>Uses ngModel</p>
+                        <p>Quick and easy</p>
+                        <p>FormsModule</p>
+                    </section>
+                    <section>
+                        <h2>Reactive forms</h2>
+                        <p>aka model driven forms</p>
+                        <p>component source of truth</p>
+                        <p>validation and controls defined in the component</p>
+                        <p>FormBuilder, FormControl, FormGroup</p>
+                        <p>No ngModel</p>
+                        <p>More code but more powerful</p>
+                        <p>ReactiveFormsModule</p>
+                    </section>
+                    <section>
+                        <h2>FormControl</h2>
+                        <p>Tracks the validity and value of a form control element</p>
+                    </section>
+                    <section>
+                        <h2>ngModel</h2>
+                        <p>Creates and Binds a FormControl instance to a form control element</p>
+                        <p>Easy 2 way binding</p>
+                    </section>
+                    <section>
+                        <h2>Exercise</h2>
+                        <strong>https://goo.gl/DCmvEq</strong>
+                    </section>
+                    <section>
+                        <h2>Validation</h2>
+                        <h3>Built-in validators</h3>
+                        <ul>
+                            <li>
+                                required
+                            </li>
+                            <li>minlength</li>
+                            <li>maxlength</li>
+                            <li>pattern</li>
+                        </ul>
+                        </p>
+                        <h3>Custom validators</h3>
+                        Return an error object or null if valid
+                        <pre><code data-trim contenteditable>
+(ctrl:AbstractControl): {[error: string]:any};
+        					</code></pre>
+                    </section>
+                    <section>
+                        <h2>Error messaging</h2>
+                        <p>ngModel and AbstractControl offer error objects for each validator</p>
+                        <p>Access the errors with
+                        <ul>
+                            <li>
+                                template reference to ngModel (template driven)
+                            </li>
+                            <li>AbstractControl instance (reactive)</li>
+                        </ul>
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Template reference variables</h2>
+                        <p>Get a reference to a DOM element or directive / component</p>
+                        <h3>Template</h3>
+                        <pre><code data-trim contenteditable>
+< input type="text" #inputRef >
+        					</code data-trim contenteditable></pre>
+                        <h3>Component</h3>
+                        <pre><code data-trim contenteditable>
+@Component({...})
+export class MyComponent{
+    @ViewChild('inputRef')
+    inputElement:ElementRef;
 
-        <section>
-            <section data-background="#DF6F0C">
-                <h2 style="color: #fff;">Forms</h2>
-            </section>
-            <section id="currentstate">
-
-            </section>
-            <section id="why">
-
-            </section>
-            <section id="framework">
-                <h2>Framework</h2>
-                <p>For building client web applications</p>
-                <img src="img/adwords.png" alt="">
-            </section>
-        </section>
+    ngAfterViewInit(){
+        // access element
+    }
+}
+        					</code></pre>
+                    </section>
+                    <section>
+                        <h2>Exercise</h2>
+                    </section>
+                    <section>
+                        <h2>FormGroup, ngForm, ngModelGroup</h2>
+                        <p>Group together form control elements</p>
+                        <p>Track validity and values of grouped control elements</p>
+                        <p>ngForm is the top level FormGroup</p>
+                        <p>Angular adds an ngForm directive to each form element</p>
+                        <p>ngModelGroup are also FormGroups but subgroups of ngForm</p>
+                    </section>
+                    <section>
+                        <h2>Submitting a form</h2>
+                        <p>use the ngSubmit directive to submit a form</p>
+                        <p>prevents the default behavior of making an http post request</p>
+                    </section>
+                    <section>
+                        <h2>Exercise</h2>
+                    </section>
+                    <section>
+                        <h2>Validation styling</h2>
+                        <p>ngModel automatically applies style classes</p>
+                        <p>easily add your own styles simply by declaring the styles in your Component decorator</p>
+                        <img src="img/valid.PNG">
+                        <img src="img/invalid.PNG">
+                    </section>
+                    <section>
+                        <h2>Input states</h2>
+                        <p>All styleable</p>
+                        <ul>
+                            <li>valid <-> invalid</li>
+                            <li>touched <-> untouched</li>
+                            <li>pristine <-> dirty</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Exercise</h2>
+                    </section>
+                    <section>
+                        <h2>RxJS Streams with form controls</h2>
+                        <p>FormControl has 2 streams</p>
+                        <ul>
+                            <li>valueChanges</li>
+                            <li>statusChanges</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Testing components that use the FormsModule (or ReactiveFormsModule)</h2>
+                        <p>Use TestBed</p>
+                        <pre><code data-trim contenteditable>
+beforeEach(()=>{
+  TestBed.configureTestingModule({
+  imports: [
+    // you must import this so that [(ngModel)] is recognized.
+    FormsModule
+  ],
+  schemas: [
+    // NO_ERRORS_SCHEMA will hide that angular doesn't know about ngModel
+  ]
+});
+        					</code></pre>
+                    </section>
+                </section>
 
 
         <!-- ===================================== -->
