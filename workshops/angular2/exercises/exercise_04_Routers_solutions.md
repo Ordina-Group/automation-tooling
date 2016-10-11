@@ -222,6 +222,23 @@ import { routing } from './app.routes';
   ...
 ```
 
+As a last step, we need to add/replace some html in our main app.component, so we have a router-outlet.
+
+```html
+<md-progress-circle *ngIf="loading" class="preloader" mode="indeterminate" color="primary"></md-progress-circle>
+<app-header *ngIf="!loading">{{ title }}</app-header>
+<div [hidden]="loading">
+    <md-card class="main">
+        <md-card-content>
+            <router-outlet></router-outlet>
+        </md-card-content>
+    </md-card>
+</div>
+```
+
+Notice that we also replaced the *ngIf with a hidden. This, because we need to make sure that the router-outlet is in the DOM, before loading our first component. If it's not in the DOM, there is no section to attach the primary route to.
+
+
 We can now navigate between our contact-list and a contact-detail, by clicking on the avatar of the contact-card. A back button, routing back to the root of our app, will take us back to our contact-list.
 
 NOTE:
